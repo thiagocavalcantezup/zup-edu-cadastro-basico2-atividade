@@ -8,6 +8,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import org.hibernate.validator.constraints.ISBN;
 
@@ -24,6 +25,7 @@ public class BookDTO {
     @NotNull
     @Past
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @JsonProperty("publication_date")
     private LocalDate publicationDate;
 
     @ISBN
