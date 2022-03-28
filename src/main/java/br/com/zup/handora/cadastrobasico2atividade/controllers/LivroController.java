@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.zup.handora.cadastrobasico2atividade.models.Book;
-import br.com.zup.handora.cadastrobasico2atividade.models.BookDTO;
-import br.com.zup.handora.cadastrobasico2atividade.repositories.BookRepository;
+import br.com.zup.handora.cadastrobasico2atividade.models.Livro;
+import br.com.zup.handora.cadastrobasico2atividade.models.LivroDTO;
+import br.com.zup.handora.cadastrobasico2atividade.repositories.LivroRepository;
 
 @RestController
-@RequestMapping(BookController.BASE_URI)
-public class BookController {
+@RequestMapping(LivroController.BASE_URI)
+public class LivroController {
 
-    public final static String BASE_URI = "/books";
+    public final static String BASE_URI = "/livros";
 
-    private final BookRepository bookRepository;
+    private final LivroRepository livroRepository;
 
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public LivroController(LivroRepository livroRepository) {
+        this.livroRepository = livroRepository;
     }
 
     @PostMapping
-    public ResponseEntity<Void> postMethodName(@RequestBody @Valid BookDTO bookDTO,
+    public ResponseEntity<Void> postMethodName(@RequestBody @Valid LivroDTO livroDTO,
                                                UriComponentsBuilder uriComponentsBuilder) {
-        Book book = bookRepository.save(bookDTO.toBook());
+        Livro livro = livroRepository.save(livroDTO.paraLivro());
 
         URI location = uriComponentsBuilder.path(BASE_URI + "/{id}")
-                                           .buildAndExpand(book.getId())
+                                           .buildAndExpand(livro.getId())
                                            .toUri();
 
         return ResponseEntity.created(location).build();

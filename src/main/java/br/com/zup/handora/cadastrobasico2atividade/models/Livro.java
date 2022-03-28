@@ -13,22 +13,22 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.ISBN;
 
 @Entity
-@Table(name = "books")
-public class Book {
+@Table(name = "livros")
+public class Livro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, length = 200)
-    private String title;
+    private String titulo;
 
     @Column(nullable = false, length = 4000)
-    private String description;
+    private String descricao;
 
     @Column(nullable = false)
     @Past
-    private LocalDate publicationDate;
+    private LocalDate dataPublicacao;
 
     @ISBN(type = ISBN.Type.ANY)
     private String isbn;
@@ -37,12 +37,12 @@ public class Book {
      * @deprecated Construtor de uso exclusivo do Hibernate
      */
     @Deprecated
-    public Book() {}
+    public Livro() {}
 
-    public Book(String title, String description, LocalDate publicationDate, String isbn) {
-        this.title = title;
-        this.description = description;
-        this.publicationDate = publicationDate;
+    public Livro(String titulo, String descricao, LocalDate dataPublicacao, String isbn) {
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.dataPublicacao = dataPublicacao;
         this.isbn = isbn;
     }
 
