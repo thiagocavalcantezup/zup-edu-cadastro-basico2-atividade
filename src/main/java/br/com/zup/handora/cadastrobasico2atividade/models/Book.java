@@ -30,7 +30,7 @@ public class Book {
     @Past
     private LocalDate publicationDate;
 
-    @ISBN
+    @ISBN(type = ISBN.Type.ANY)
     private String isbn;
 
     /**
