@@ -43,7 +43,11 @@ public class BookDTO {
     }
 
     public Book toBook() {
-        String newIsbn = isbn.replaceAll("[^0-9X]", "");
+        String newIsbn = null;
+
+        if (isbn != null) {
+            newIsbn = isbn.replaceAll("[^0-9X]", "");
+        }
 
         return new Book(title, description, publicationDate, newIsbn);
     }
