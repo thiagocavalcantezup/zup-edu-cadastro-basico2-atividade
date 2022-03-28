@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-CadastroBasico2AtividadeApplication<cadastro-basico2-atividade>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "br.com.zup.handora.cadastrobasico2atividade.CadastroBasico2AtividadeApplication",
+      "projectName": "cadastro-basico2-atividade",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

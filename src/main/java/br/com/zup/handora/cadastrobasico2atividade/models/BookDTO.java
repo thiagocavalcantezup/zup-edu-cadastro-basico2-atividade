@@ -3,6 +3,7 @@ package br.com.zup.handora.cadastrobasico2atividade.models;
 import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -20,7 +21,7 @@ public class BookDTO {
     @Size(max = 4000)
     private String description;
 
-    @NotBlank
+    @NotNull
     @Past
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate publicationDate;
