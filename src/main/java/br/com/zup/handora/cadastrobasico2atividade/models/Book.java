@@ -33,6 +33,10 @@ public class Book {
     @ISBN
     private String isbn;
 
+    /**
+     * @deprecated Construtor de uso exclusivo do Hibernate
+     */
+    @Deprecated
     public Book() {}
 
     public Book(String title, String description, LocalDate publicationDate, String isbn) {
